@@ -1,15 +1,4 @@
 {
-  "dotnet.test.explorer.testProjectPath": "tests/mdp_dico.Tests.fsproj",
-  "dotnet.test.explorer.testFramework": "xUnit",
-  "dotnet.test.explorer.include": [
-    "**/*Tests.fsproj"
-  ],
-  "dotnet.test.explorer.excluded": [
-    "**/bin/**",
-    "**/obj/**"
-  ],
-  "dotnet.test.explorer.build": true,
-  "dotnet.test.explorer.runInParallel": false,
-  "dotnet.test.explorer.codeLens": true,
-  "dotnet.test.explorer.debug": true
+  "dotnet.defaultSolution": "mdp_dico.slnx",
+  "dotnet-test-explorer.testProjectPath": "./tests"
 }
