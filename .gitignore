@@ -1,0 +1,12 @@
+# Artefacts de build
+bin/
+obj/
+dist/
+
+# Outils
+.fake/
+*.fsx.lock
+TestResults/
+
+# IDE
+.ionide/

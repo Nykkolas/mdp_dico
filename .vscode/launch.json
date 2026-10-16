@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Tests",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "dotnet",
+      "args": [
+        "test",
+        "tests/mdp_dico.Tests.fsproj",
+        "--no-build",
+        "--filter", "FullyQualifiedName~DictionnaireTests|MotDePasseTests|ProgramTests"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    },
+    {
+      "name": "Debug Application",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "dotnet",
+      "args": ["run", "--no-launch-profile"],
+      "cwd": "${workspaceFolder}/src/MdpDico.UI",
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/MdpDico.Core/">
+    <Project Path="src/MdpDico.Core/mdp_dico.fsproj" />
+  </Folder>
+  <Folder Name="/src/MdpDico.UI/">
+    <Project Path="src/MdpDico.UI/mdp_dico.UI.fsproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/mdp_dico.Tests.fsproj" />
+  </Folder>
+</Solution>
