@@ -2,6 +2,7 @@ module DictionnaireTests
 
 open Xunit
 open FsUnit.Xunit
+open System.IO
 open Dictionnaire
 
 /// Module de tests pour le module Dictionnaire
@@ -41,6 +42,10 @@ let ``Dictionnaire - chargerDepuisFichier retourne None si fichier inexistant`` 
 
 [<Fact>]
 let ``Dictionnaire - chargerDepuisFichier filtre les mots trop courts`` () =
-    // Test impossible à faire sans mock du système de fichiers
-    // Le filtrage est implémenté dans chargerDepuisFichier avec Array.filter
-    true |> should be True
+    let chemin = Path.GetTempFileName()
+    try
+        File.WriteAllLines(chemin, [| "ab"; "abc"; "mot"; "xy"; "dictionnaire" |])
+        let resultat = chargerDepuisFichier chemin
+        resultat |> should equal (Some (Dictionnaire [ "abc"; "mot"; "dictionnaire" ]))
+    finally
+        File.Delete chemin
