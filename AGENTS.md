@@ -2,6 +2,9 @@
 
 ## 🤝 Mode de collaboration
 
+### Commits et push
+- Ne jamais commiter ni pousser sans l'**autorisation explicite** de l'utilisateur : proposer, attendre le oui.
+
 ### "Propose-moi" = proposer, ne pas exécuter
 - Quand l'utilisateur demande de **proposer** (améliorations, changements, refactor), NE PAS modifier les fichiers.
 - Expliquer d'abord ce qui est prévu : fichiers concernés, commandes à exécuter, risques.
