@@ -8,6 +8,10 @@
 - Attendre l'**autorisation explicite** de l'utilisateur avant d'appliquer quoi que ce soit.
 - Les demandes directes ("fais", "corrige", "ajoute") restent des autorisations à agir immédiatement.
 
+### "Audit / review du code"
+- Lire `docs/AUDIT.md` et suivre la grille : procédure, thèmes, niveaux de sévérité, format de rapport.
+- L'audit ne modifie aucun fichier : recommandations uniquement, sauf demande explicite de corriger.
+
 ### "Crée une version x.y.z"
 - Équivaut à : `git tag vx.y.z` + `git push origin vx.y.z` (autorisation explicite incluse).
 - Le workflow CI (`.github/workflows/ci.yml`) exécute les tests puis publie les binaires des 3 plateformes en GitHub Release.
