@@ -49,3 +49,13 @@ let ``Dictionnaire - chargerDepuisFichier filtre les mots trop courts`` () =
         resultat |> should equal (Some (Dictionnaire [ "abc"; "mot"; "dictionnaire" ]))
     finally
         File.Delete chemin
+
+[<Fact>]
+let ``Dictionnaire - chargerDepuisFichier retourne None si tous les mots sont trop courts`` () =
+    let chemin = Path.GetTempFileName()
+    try
+        File.WriteAllLines(chemin, [| "ab"; "xy"; "cd" |])
+        let resultat = chargerDepuisFichier chemin
+        resultat |> should equal None
+    finally
+        File.Delete chemin

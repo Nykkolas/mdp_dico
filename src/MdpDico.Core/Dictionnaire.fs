@@ -11,12 +11,15 @@ type Dictionnaire =
     | Dictionnaire of string list
 
 /// Charge les mots depuis un fichier
+/// Retourne None si le fichier n'existe pas ou ne contient aucun mot utilisable
 let chargerDepuisFichier (chemin: string) : Dictionnaire option =
     if File.Exists(chemin) then
         File.ReadAllLines(chemin)
         |> Array.filter (fun mot -> String.length mot > 2)
         |> Array.toList
-        |> fun mots -> Some (Dictionnaire mots)
+        |> function
+            | [] -> None
+            | mots -> Some (Dictionnaire mots)
     else
         None
 
