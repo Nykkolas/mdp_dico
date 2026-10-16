@@ -24,13 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\MdpDico.Core\mdp_dico.fsproj" />
+    <ProjectReference Include="..\..\src\MdpDico.UI\mdp_dico.UI.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="DictionnaireTests.fs" />
-    <Compile Include="MotDePasseTests.fs" />
-    <Compile Include="ProgramTests.fs" />
+    <Compile Include="MainTests.fs" />
   </ItemGroup>
 
 </Project>
