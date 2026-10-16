@@ -37,7 +37,7 @@ let ``MotDePasse - selectionnerMotsAleatoires retourne le bon nombre de mots`` (
     let random = Random(42) // Graine fixe pour la reproductibilité
     let mots = ["a"; "b"; "c"; "d"; "e"; "f"; "g"; "h"; "i"; "j"]
     
-    let selection = selectionnerMotsAleatoires random mots 5
+    let selection = selectionnerMotsAleatoires random.Next mots 5
     
     List.length selection |> should equal 5
 
@@ -46,35 +46,35 @@ let ``MotDePasse - selectionnerMotsAleatoires retourne des mots de la liste`` ()
     let random = Random(42)
     let mots = ["a"; "b"; "c"; "d"; "e"]
     
-    let selection = selectionnerMotsAleatoires random mots 5
+    let selection = selectionnerMotsAleatoires random.Next mots 5
     
     for mot in selection do
         mots |> should contain mot
 
 [<Fact>]
-let ``MotDePasse - genererAvecRandom produit un mot de passe valide`` () =
+let ``MotDePasse - genererAvecTirage produit un mot de passe valide`` () =
     let random = Random(42)
     let dictionnaire = Dictionnaire ["a"; "b"; "c"; "d"; "e"; "f"; "g"]
     
-    let mdp = genererAvecRandom random dictionnaire
+    let mdp = genererAvecTirage random.Next dictionnaire
     
     estValide mdp |> should be True
     valeur mdp |> should haveSubstring "-"
 
 [<Fact>]
-let ``MotDePasse - genererAvecRandom utilise exactement 5 mots`` () =
+let ``MotDePasse - genererAvecTirage utilise exactement 5 mots`` () =
     let random = Random(42)
     let dictionnaire = Dictionnaire ["a"; "b"; "c"; "d"; "e"; "f"]
     
-    let mdp = genererAvecRandom random dictionnaire
+    let mdp = genererAvecTirage random.Next dictionnaire
     let mots = (valeur mdp).Split('-')
     
     Array.length mots |> should equal 5
 
 [<Fact>]
-let ``MotDePasse - genererAvecRandom avec dictionnaireSecours produit un mot de passe valide`` () =
+let ``MotDePasse - genererAvecTirage avec dictionnaireSecours produit un mot de passe valide`` () =
     let random = Random(42)
-    let mdp = genererAvecRandom random dictionnaireSecours
+    let mdp = genererAvecTirage random.Next dictionnaireSecours
     
     estValide mdp |> should be True
     valeur mdp |> should not' (haveSubstring " ")

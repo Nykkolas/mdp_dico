@@ -66,8 +66,7 @@ let copyText (clipboard: IClipboard) (text: string) =
 let regeneratePassword () =
     async {
         let dictionnaire = charger ()
-        let random = System.Random()
-        return valeur (genererAvecRandom random dictionnaire)
+        return valeur (generer dictionnaire)
     }
 
 let init () : State * Cmd<Msg> =

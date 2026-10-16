@@ -17,7 +17,7 @@ let ``Intégration - générer un mot de passe complet fonctionne`` () =
     ]
     
     let random = Random(123)
-    let mdp = genererAvecRandom random dictionnaire
+    let mdp = genererAvecTirage random.Next dictionnaire
     
     estValide mdp |> should be True
     valeur mdp |> should haveSubstring "-"

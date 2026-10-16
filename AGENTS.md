@@ -49,8 +49,9 @@
       (fun ex -> FailedMsg ex.Message)
   ```
 
-### Random
-- **Ne pas recréer** `System.Random()` à chaque appel. Le stocker dans le State et le réutiliser.
+### Aléatoire
+- **Mots de passe** : toujours `System.Security.Cryptography.RandomNumberGenerator` (crypto-sécurisé, statique, sans état à gérer). Jamais `System.Random` pour un usage sensible.
+- **Injection** : le Core reçoit une fonction `tirerIndex: int -> int`, pas un objet `Random`. Les tests injectent `Random(42).Next` pour la reproductibilité.
 
 ---
 
