@@ -8,6 +8,11 @@
 - Attendre l'**autorisation explicite** de l'utilisateur avant d'appliquer quoi que ce soit.
 - Les demandes directes ("fais", "corrige", "ajoute") restent des autorisations à agir immédiatement.
 
+### "Crée une version x.y.z"
+- Équivaut à : `git tag vx.y.z` + `git push origin vx.y.z` (autorisation explicite incluse).
+- Le workflow CI (`.github/workflows/ci.yml`) exécute les tests puis publie les binaires des 3 plateformes en GitHub Release.
+- Après le push du tag, vérifier le run et la Release obtenue, et rapporter le résultat.
+
 ## 📚 Documentation et Ressources
 
 - **Clipboard Avalonia** : [https://docs.avaloniaui.net/docs/services/clipboard#writing](https://docs.avaloniaui.net/docs/services/clipboard#writing)
