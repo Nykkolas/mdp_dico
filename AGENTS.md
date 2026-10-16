@@ -130,6 +130,10 @@
 
 ## Bonnes pratiques générales
 
+### TDD
+- Approche par défaut pour les corrections et nouvelles fonctionnalités : écrire d'abord le test qui échoue, le voir échouer, puis corriger le code, puis revérifier (rouge/vert).
+- Chaque bug corrigé doit avoir son test de non-régression.
+
 ### DRY
 - Éviter la répétition de code. Extraire les conditions répétées en fonctions helpers.
 - Exemple : Si `state.Status = "Copié !" || state.Status = "Mot de passe généré !"` est utilisé plusieurs fois, créer une fonction `isSuccessStatus`.
